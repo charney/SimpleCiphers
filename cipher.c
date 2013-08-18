@@ -15,9 +15,9 @@
 /* the number of bytes read from the stdin */
 extern int bytesRead;
 
-char* encryptNames[ENC_IMPLS] = {"caesar","xor","rotate"};
+char* encryptNames[ENC_IMPLS] = {"cesar","xor","rotate"};
 
-encryptFunc encrypts[ENC_IMPLS] = {&caesar,&xor,&rotate};
+encryptFunc encrypts[ENC_IMPLS] = {&cesar,&xor,&rotate};
 
 
 /* cesar function
@@ -26,7 +26,7 @@ encryptFunc encrypts[ENC_IMPLS] = {&caesar,&xor,&rotate};
  * cesar function is given the input and the offset. The function returns the result in the
  * output string.
  */
-void caesar(unsigned char* input, char offset, unsigned char* output) {
+void cesar(unsigned char* input, char offset, unsigned char* output) {
 	int i = 0;
 	for(i = 0; i < bytesRead; i++){
 		output[i]=(input[i] + offset) % 256;
